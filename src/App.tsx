@@ -1,4 +1,4 @@
-import HeroSection from './sections/HeroSection';
+import GothicHero from './components/GothicHero';
 import MarqueeSection from './sections/MarqueeSection';
 import AboutSection from './sections/AboutSection';
 import ServicesSection from './sections/ServicesSection';
@@ -8,7 +8,7 @@ import ContactSection from './sections/ContactSection';
 function App() {
   return (
     <div style={{ background: '#0C0C0C', overflowX: 'clip' }}>
-      <HeroSection />
+      <GothicHero />
       <MarqueeSection />
       <AboutSection />
       <ServicesSection />
