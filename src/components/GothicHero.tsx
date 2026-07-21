@@ -66,7 +66,7 @@ export default function GothicHero() {
       const trail = trailRef.current;
 
       ctx.clearRect(0, 0, width, height);
-      const b = cover(bottom, width, height, 0.4);
+      const b = cover(bottom, width, height, 0.12);
       ctx.drawImage(bottom, b.x, b.y, b.w, b.h);
 
       const offscreen = document.createElement('canvas');
