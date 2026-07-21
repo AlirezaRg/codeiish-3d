@@ -162,6 +162,7 @@ export default function GothicHero() {
             Remote · Worldwide
           </motion.span>
           <h1 className="gh-title">
+            <span className="sr-only">Alireza Rogni — </span>
             Backend
             <br />
             Engineer
@@ -179,11 +180,11 @@ export default function GothicHero() {
           <motion.span className="gh-eyebrow gh-eyebrow--accent" variants={item}>
             Alireza Rogni
           </motion.span>
-          <h1 className="gh-title">
+          <h2 className="gh-title">
             The Mind
             <br />
             Behind The Code
-          </h1>
+          </h2>
           <motion.p className="gh-text" variants={item}>
             Linux administrator by trade, automation obsessive by nature.
             Every script a shortcut, every bridge a system that finally
