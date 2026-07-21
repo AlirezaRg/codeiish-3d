@@ -37,8 +37,8 @@ export default function MarqueeSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const row1 = projects.slice(0, 4);
-  const row2 = projects.slice(4, 7);
+  const row1 = projects.slice(0, 5);
+  const row2 = projects.slice(5, 10);
   const row1Tripled = [...row1, ...row1, ...row1];
   const row2Tripled = [...row2, ...row2, ...row2];
 

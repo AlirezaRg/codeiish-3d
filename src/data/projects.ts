@@ -93,4 +93,40 @@ export const projects: Project[] = [
     gradient: 'linear-gradient(135deg,#c026d3,#1c0a20)',
     image: '/projects/omid-market.jpg',
   },
+  {
+    number: '08',
+    name: 'Hand Mouse Control',
+    category: 'Computer Vision',
+    type: 'Open Source',
+    description:
+      'Controls the Windows mouse cursor with hand movement via webcam — MediaPipe Hands tracks 21 landmarks in real time, a closed fist drags and an open hand releases.',
+    tags: ['Python', 'MediaPipe', 'OpenCV', 'PyAutoGUI'],
+    gradient: 'linear-gradient(135deg,#0891b2,#0c1a1f)',
+    image: '/projects/hand-mouse-control.jpg',
+    link: 'https://github.com/AlirezaRg/hand-mouse-control',
+  },
+  {
+    number: '09',
+    name: 'CV Playground',
+    category: 'Face Recognition',
+    type: 'Open Source',
+    description:
+      'Real-time face detection and recognition pipeline — RetinaFace finds and aligns faces, ArcFace embeds them into 512-dim vectors, and cosine similarity matches them against an enrolled database.',
+    tags: ['Python', 'InsightFace', 'OpenCV', 'ArcFace'],
+    gradient: 'linear-gradient(135deg,#64748b,#0f1115)',
+    image: '/projects/cv-playground.jpg',
+    link: 'https://github.com/AlirezaRg/cv-playground',
+  },
+  {
+    number: '10',
+    name: 'PDF Insurance to Excel',
+    category: 'Document Automation',
+    type: 'Open Source',
+    description:
+      "Converts Iranian social-security insurance-history PDF reports into a single multi-sheet Excel file — plus a Tkinter GUI with OCR for ID documents (Tesseract, Persian).",
+    tags: ['Python', 'pdfplumber', 'pandas', 'Tesseract OCR'],
+    gradient: 'linear-gradient(135deg,#78716c,#1c1917)',
+    image: '/projects/pdf-insurance-to-excel.jpg',
+    link: 'https://github.com/AlirezaRg/pdf-insurance-to-excel',
+  },
 ];

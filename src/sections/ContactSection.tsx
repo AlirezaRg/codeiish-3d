@@ -19,7 +19,7 @@ export default function ContactSection() {
           <a href="https://github.com/AlirezaRg" target="_blank" rel="noopener noreferrer" className="hover:text-[#D7E2EA] transition-colors">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/alireza-rogni" target="_blank" rel="noopener noreferrer" className="hover:text-[#D7E2EA] transition-colors">
+          <a href="https://www.linkedin.com/in/alirezarogni" target="_blank" rel="noopener noreferrer" className="hover:text-[#D7E2EA] transition-colors">
             LinkedIn
           </a>
           <a href="mailto:alirezarogni@gmail.com" className="hover:text-[#D7E2EA] transition-colors flex items-center gap-2">
