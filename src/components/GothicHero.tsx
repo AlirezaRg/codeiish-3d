@@ -26,7 +26,7 @@ export default function GothicHero() {
 
     const bottom = new Image();
     const top = new Image();
-    bottom.src = '/hero-portrait-gold.jpg';
+    bottom.src = '/hero-tech.png';
     top.src = '/hero-portrait.jpg';
 
     const resize = () => {
@@ -44,11 +44,14 @@ export default function GothicHero() {
 
     let rafId: number;
 
-    const cover = (img: HTMLImageElement, width: number, height: number) => {
+    // anchorY biases the crop window vertically (0 = show the top of the
+    // image, 0.5 = centered) — needed because a wide, short hero canvas
+    // only shows a thin horizontal slice of a tall portrait photo.
+    const cover = (img: HTMLImageElement, width: number, height: number, anchorY = 0.5) => {
       const scale = Math.max(width / img.width, height / img.height);
-      const w = img.width * scale;
-      const h = img.height * scale;
-      return { x: (width - w) / 2, y: (height - h) / 2, w, h };
+      const w = img.naturalWidth * scale || img.width * scale;
+      const h = img.naturalHeight * scale || img.height * scale;
+      return { x: (width - w) / 2, y: (height - h) * anchorY, w, h };
     };
 
     const draw = () => {
@@ -63,7 +66,7 @@ export default function GothicHero() {
       const trail = trailRef.current;
 
       ctx.clearRect(0, 0, width, height);
-      const b = cover(bottom, width, height);
+      const b = cover(bottom, width, height, 0.4);
       ctx.drawImage(bottom, b.x, b.y, b.w, b.h);
 
       const offscreen = document.createElement('canvas');
@@ -81,7 +84,7 @@ export default function GothicHero() {
           off.fill();
         }
         off.globalCompositeOperation = 'source-in';
-        const t = cover(top, width, height);
+        const t = cover(top, width, height, 0.12);
         off.drawImage(top, t.x, t.y, t.w, t.h);
         ctx.drawImage(offscreen, 0, 0);
       }
