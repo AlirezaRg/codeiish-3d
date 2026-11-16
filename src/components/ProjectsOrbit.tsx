@@ -1,10 +1,14 @@
+import { Suspense, lazy } from 'react';
 import './ProjectsOrbit.css';
-import ProjectsOrbit3D from './ProjectsOrbit3D';
+
+const ProjectsOrbit3D = lazy(() => import('./ProjectsOrbit3D'));
 
 export default function ProjectsOrbit() {
   return (
     <section className="po" id="projects" aria-labelledby="po-title">
-      <ProjectsOrbit3D />
+      <Suspense fallback={<div className="po3-canvas-wrap" />}>
+        <ProjectsOrbit3D />
+      </Suspense>
 
       <div className="po-head">
         <p className="po-eyebrow">05 / PROJECTS</p>
