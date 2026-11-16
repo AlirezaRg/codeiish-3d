@@ -1,0 +1,27 @@
+# Alireza Rogni (AlirezaRg / Codeiish)
+
+> Backend & systems engineer. Python, Flask, Django, Odoo/ERP integrations, Linux administration, and Claude Code CLI powered AI tooling. Builds backends that don't fall over and bridges hardware/systems that were never meant to talk to each other.
+
+Alireza Rogni is a backend developer and Linux administrator, founder of Codeiish, based remotely and working worldwide. Core focus areas: Python backend services (Flask, Django), Odoo 18 / ERP integrations, biometric hardware bridges over WebSocket, Linux server administration (Debian, systemd, Nginx), and small AI-powered developer tools built on Claude Code CLI.
+
+## Contact
+
+- Email: alirezarogni@gmail.com
+- GitHub: https://github.com/AlirezaRg
+- LinkedIn: https://www.linkedin.com/in/alireza-rogni/
+- Website: https://codeiish.ir/
+
+## Projects
+
+- Rasco-Gosi — JARVIS-style desktop AI assistant using Claude Code CLI as its reasoning engine: https://github.com/AlirezaRg/Rasco-Gosi
+- Ex-Changes-Code (EX-CHANGE) — AI-powered code translator across 13 programming languages via Claude Code CLI: https://github.com/AlirezaRg/Ex-Changes-Code
+- code-analysis (CODEANALYSIS) — AI-powered codebase search and file explainer: https://github.com/AlirezaRg/code-analysis
+- Flask + Odoo Attendance Bridge — Flask middleware connecting ST-Face biometric devices to Odoo 18 over WebSocket
+- Omid Market — Full Django e-commerce app with ZarinPal payments and RTL support
+- hand-mouse-control — Webcam hand-tracking mouse control via MediaPipe: https://github.com/AlirezaRg/hand-mouse-control
+- cv-playground — Real-time face detection/recognition with InsightFace and ArcFace: https://github.com/AlirezaRg/cv-playground
+- pdf-insurance-to-excel — Converts Iranian insurance PDF reports to Excel, with OCR: https://github.com/AlirezaRg/pdf-insurance-to-excel
+
+## Notes
+
+This site (codeiish.ir) is a single-page portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. Source: https://github.com/AlirezaRg/codeiish-3d
