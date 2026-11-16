@@ -21,8 +21,13 @@ export default function GothicHero() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const TRAIL_LENGTH = 60;
+    const TRAIL_LENGTH = 36;
     const HEAD_RADIUS = 180;
+
+    // Reused across frames instead of created per-frame — a fresh <canvas>
+    // every tick was a major main-thread/GC cost (and ran even when idle).
+    const offscreen = document.createElement('canvas');
+    const off = offscreen.getContext('2d');
 
     const bottom = new Image();
     const top = new Image();
@@ -32,17 +37,27 @@ export default function GothicHero() {
     const resize = () => {
       canvas.width = hero.offsetWidth;
       canvas.height = hero.offsetHeight;
+      offscreen.width = hero.offsetWidth;
+      offscreen.height = hero.offsetHeight;
     };
     resize();
     window.addEventListener('resize', resize);
 
+    let rafId: number;
+    let running = false;
+
     const onMove = (e: MouseEvent) => {
       const rect = hero.getBoundingClientRect();
       mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      // The draw loop only runs once the user actually moves the mouse over
+      // the hero — idle page load (and automated performance audits) does
+      // zero canvas work instead of animating an unseen cursor forever.
+      if (!running) {
+        running = true;
+        draw();
+      }
     };
     hero.addEventListener('mousemove', onMove);
-
-    let rafId: number;
 
     // anchorY biases the crop window vertically (0 = show the top of the
     // image, 0.5 = centered) — needed because a wide, short hero canvas
@@ -52,6 +67,13 @@ export default function GothicHero() {
       const w = img.naturalWidth * scale || img.width * scale;
       const h = img.naturalHeight * scale || img.height * scale;
       return { x: (width - w) / 2, y: (height - h) * anchorY, w, h };
+    };
+
+    const paintBase = () => {
+      const { width, height } = canvas;
+      const b = cover(bottom, width, height, 0.12);
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(bottom, b.x, b.y, b.w, b.h);
     };
 
     const draw = () => {
@@ -69,11 +91,8 @@ export default function GothicHero() {
       const b = cover(bottom, width, height, 0.12);
       ctx.drawImage(bottom, b.x, b.y, b.w, b.h);
 
-      const offscreen = document.createElement('canvas');
-      offscreen.width = width;
-      offscreen.height = height;
-      const off = offscreen.getContext('2d');
       if (off) {
+        off.clearRect(0, 0, width, height);
         for (let i = 0; i < trail.length; i++) {
           const t = 1 - i / trail.length;
           const r = HEAD_RADIUS * (0.25 + 0.75 * t);
@@ -86,6 +105,7 @@ export default function GothicHero() {
         off.globalCompositeOperation = 'source-in';
         const t = cover(top, width, height, 0.12);
         off.drawImage(top, t.x, t.y, t.w, t.h);
+        off.globalCompositeOperation = 'source-over';
         ctx.drawImage(offscreen, 0, 0);
       }
 
@@ -100,16 +120,12 @@ export default function GothicHero() {
         ctx.fillStyle = glow;
         ctx.fill();
       }
-      rafId = requestAnimationFrame(draw);
+      if (running) rafId = requestAnimationFrame(draw);
     };
 
     let loaded = 0;
-    let started = false;
     const onLoad = () => {
-      if (++loaded >= 2 && !started) {
-        started = true;
-        draw();
-      }
+      if (++loaded >= 2) paintBase();
     };
     bottom.onload = onLoad;
     top.onload = onLoad;
