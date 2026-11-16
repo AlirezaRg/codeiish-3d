@@ -2,7 +2,7 @@ export default function HeroPortrait() {
   return (
     <div className="relative w-full rounded-[32px] overflow-hidden animate-[float_6s_ease-in-out_infinite]">
       <img
-        src="/hero-portrait.jpg"
+        src="/hero-portrait.webp"
         alt="Alireza Rogni"
         className="w-full h-auto object-cover"
         draggable={false}

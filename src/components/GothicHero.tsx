@@ -26,8 +26,8 @@ export default function GothicHero() {
 
     const bottom = new Image();
     const top = new Image();
-    bottom.src = '/hero-tech.png';
-    top.src = '/hero-portrait.jpg';
+    bottom.src = '/hero-tech.webp';
+    top.src = '/hero-portrait.webp';
 
     const resize = () => {
       canvas.width = hero.offsetWidth;
