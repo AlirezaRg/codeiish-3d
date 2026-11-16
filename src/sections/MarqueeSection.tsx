@@ -7,13 +7,15 @@ function Tile({ project }: { project: (typeof projects)[number] }) {
       className="w-[420px] h-[270px] rounded-2xl flex-shrink-0 flex items-end p-6 relative overflow-hidden"
       style={{ background: project.gradient }}
     >
-      <img
-        src={project.image}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-        draggable={false}
-      />
+      {project.image && (
+        <img
+          src={project.image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          draggable={false}
+        />
+      )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%)' }} />
       <span className="relative text-white font-medium text-xl uppercase tracking-wide">{project.name}</span>
     </div>
@@ -37,8 +39,9 @@ export default function MarqueeSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const row1 = projects.slice(0, 5);
-  const row2 = projects.slice(5, 10);
+  const mid = Math.ceil(projects.length / 2);
+  const row1 = projects.slice(0, mid);
+  const row2 = projects.slice(mid);
   const row1Tripled = [...row1, ...row1, ...row1];
   const row2Tripled = [...row2, ...row2, ...row2];
 

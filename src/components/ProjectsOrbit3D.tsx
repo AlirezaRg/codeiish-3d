@@ -12,6 +12,16 @@ interface RepoNode {
 }
 
 const REPOS: RepoNode[] = [
+  { id: 'malvax', label: 'malvax', url: 'https://github.com/AlirezaRg/malvax' },
+  { id: 'sentinelbot', label: 'sentinelbot', url: 'https://github.com/AlirezaRg/sentinelbot' },
+  { id: 'meethub', label: 'meethub', url: 'https://github.com/AlirezaRg/meethub' },
+  { id: 'linux-tama', label: 'Linux-Tama', url: 'https://github.com/AlirezaRg/Linux-Tama' },
+  { id: 'xlsx-dashboard-builder', label: 'xlsx-dashboard-builder-', url: 'https://github.com/AlirezaRg/xlsx-dashboard-builder-' },
+  { id: 'n8n-1979', label: 'n8n-1979', url: 'https://github.com/AlirezaRg/n8n-1979' },
+  { id: 'spiderman', label: 'spiderman', url: 'https://github.com/AlirezaRg/spiderman' },
+  { id: 'dc-flash', label: 'DC-flash', url: 'https://github.com/AlirezaRg/DC-flash' },
+  { id: 'linuxjapaness', label: 'linuxjapaness', url: 'https://github.com/AlirezaRg/linuxjapaness' },
+  { id: 'game-play-site', label: 'game-play-site', url: 'https://github.com/AlirezaRg/game-play-site' },
   { id: 'rasco-gosi', label: 'Rasco-Gosi', url: 'https://github.com/AlirezaRg/Rasco-Gosi' },
   { id: 'ex-changes-code', label: 'Ex-Changes-Code', url: 'https://github.com/AlirezaRg/Ex-Changes-Code' },
   { id: 'code-analysis', label: 'code-analysis', url: 'https://github.com/AlirezaRg/code-analysis' },
@@ -32,6 +42,8 @@ const REPOS: RepoNode[] = [
   { id: 'bottelegram-id', label: 'bottelegram_id', url: 'https://github.com/AlirezaRg/bottelegram_id' },
   { id: 'chrome-extentions', label: 'chrome-extentions', url: 'https://github.com/AlirezaRg/chrome-extentions' },
   { id: 'telegrambot-video01', label: 'telegrambot-video01', url: 'https://github.com/AlirezaRg/telegrambot-video01' },
+  { id: 'kopal-eng', label: 'kopal-eng', url: 'https://github.com/AlirezaRg/kopal-eng' },
+  { id: 'rasco-web', label: 'rasco-web', url: 'https://github.com/AlirezaRg/rasco-web' },
 ];
 
 const RADIUS = 4.4;

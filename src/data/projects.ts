@@ -6,7 +6,7 @@ export interface Project {
   description: string;
   tags: string[];
   gradient: string;
-  image: string;
+  image?: string;
   link?: string;
 }
 
@@ -128,5 +128,60 @@ export const projects: Project[] = [
     gradient: 'linear-gradient(135deg,#78716c,#1c1917)',
     image: '/projects/pdf-insurance-to-excel.jpg',
     link: 'https://github.com/AlirezaRg/pdf-insurance-to-excel',
+  },
+  {
+    number: '11',
+    name: 'Malvax',
+    category: 'Malware Analysis Sandbox',
+    type: 'Open Source',
+    description:
+      'Defensive Linux malware-analysis and behavioral sandbox platform for laboratory use — isolates and observes suspicious binaries to understand what they actually do.',
+    tags: ['Python', 'Linux', 'Sandboxing', 'Security'],
+    gradient: 'linear-gradient(135deg,#dc2626,#1a0a0a)',
+    link: 'https://github.com/AlirezaRg/malvax',
+  },
+  {
+    number: '12',
+    name: 'SentinelBot',
+    category: 'Server Security Monitor',
+    type: 'Open Source',
+    description:
+      'Self-hosted watcher for Linux servers — catches SSH brute-force attempts, root logins, and unexpected processes or open ports, groups them into scored incidents, and alerts by email, dashboard, and Prometheus metrics.',
+    tags: ['Python', 'Linux', 'Prometheus', 'Security'],
+    gradient: 'linear-gradient(135deg,#ef4444,#1f0a0a)',
+    link: 'https://github.com/AlirezaRg/sentinelbot',
+  },
+  {
+    number: '13',
+    name: 'MeetHub',
+    category: 'Meeting Task Tracker',
+    type: 'Open Source',
+    description:
+      'A lightweight, meeting-driven task tracker — teams log meetings, assign action items with owners and due dates on Kanban boards, and unfinished tasks automatically carry forward as follow-ups.',
+    tags: ['JavaScript', 'Node.js', 'Kanban', 'Telegram'],
+    gradient: 'linear-gradient(135deg,#0ea5e9,#0a1420)',
+    link: 'https://github.com/AlirezaRg/meethub',
+  },
+  {
+    number: '14',
+    name: 'Linux Tamagotchi',
+    category: 'Desktop Pet / AI Debugger',
+    type: 'Open Source',
+    description:
+      'A floating crowned-skull desktop pet whose mood and animations react to your system stats — with a terminal version and a Claude-powered debugging assistant that only runs shell commands after you approve them.',
+    tags: ['Python', 'Linux', 'Claude Code CLI', 'Desktop UI'],
+    gradient: 'linear-gradient(135deg,#a855f7,#160a22)',
+    link: 'https://github.com/AlirezaRg/Linux-Tama',
+  },
+  {
+    number: '15',
+    name: 'XLSX Dashboard Builder',
+    category: 'Document Automation',
+    type: 'Open Source',
+    description:
+      'Windows tool that converts a Persian recruitment data sheet into a formatted, print-ready Excel report — KPI cards, charts, auto-generated analysis, per-project sheets, and hiring-duration calculations.',
+    tags: ['Python', 'openpyxl', 'Excel', 'Automation'],
+    gradient: 'linear-gradient(135deg,#16a34a,#0a1f10)',
+    link: 'https://github.com/AlirezaRg/xlsx-dashboard-builder-',
   },
 ];
