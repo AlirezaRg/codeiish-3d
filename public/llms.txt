@@ -4,24 +4,24 @@
 
 Alireza Rogni is a backend developer and Linux administrator, founder of Codeiish, based remotely and working worldwide. Core focus areas: Python backend services (Flask, Django), Odoo 18 / ERP integrations, biometric hardware bridges over WebSocket, Linux server administration (Debian, systemd, Nginx), and small AI-powered developer tools built on Claude Code CLI.
 
+Two client projects are not open source and have no public repository: a Flask middleware bridging ST-Face biometric devices to Odoo 18 over WebSocket, and Omid Market, a full Django e-commerce app with ZarinPal payments and RTL support.
+
 ## Contact
 
-- Email: alirezarogni@gmail.com
-- GitHub: https://github.com/AlirezaRg
-- LinkedIn: https://www.linkedin.com/in/alireza-rogni/
-- Website: https://codeiish.ir/
+- [Email](mailto:alirezarogni@gmail.com): alirezarogni@gmail.com
+- [GitHub](https://github.com/AlirezaRg): source code and open-source projects
+- [LinkedIn](https://www.linkedin.com/in/alireza-rogni/): professional profile
+- [Website](https://codeiish.ir/): this portfolio
 
 ## Projects
 
-- Rasco-Gosi — JARVIS-style desktop AI assistant using Claude Code CLI as its reasoning engine: https://github.com/AlirezaRg/Rasco-Gosi
-- Ex-Changes-Code (EX-CHANGE) — AI-powered code translator across 13 programming languages via Claude Code CLI: https://github.com/AlirezaRg/Ex-Changes-Code
-- code-analysis (CODEANALYSIS) — AI-powered codebase search and file explainer: https://github.com/AlirezaRg/code-analysis
-- Flask + Odoo Attendance Bridge — Flask middleware connecting ST-Face biometric devices to Odoo 18 over WebSocket
-- Omid Market — Full Django e-commerce app with ZarinPal payments and RTL support
-- hand-mouse-control — Webcam hand-tracking mouse control via MediaPipe: https://github.com/AlirezaRg/hand-mouse-control
-- cv-playground — Real-time face detection/recognition with InsightFace and ArcFace: https://github.com/AlirezaRg/cv-playground
-- pdf-insurance-to-excel — Converts Iranian insurance PDF reports to Excel, with OCR: https://github.com/AlirezaRg/pdf-insurance-to-excel
+- [Rasco-Gosi](https://github.com/AlirezaRg/Rasco-Gosi): JARVIS-style desktop AI assistant using Claude Code CLI as its reasoning engine
+- [Ex-Changes-Code](https://github.com/AlirezaRg/Ex-Changes-Code): AI-powered code translator across 13 programming languages via Claude Code CLI
+- [code-analysis](https://github.com/AlirezaRg/code-analysis): AI-powered codebase search and file explainer
+- [hand-mouse-control](https://github.com/AlirezaRg/hand-mouse-control): webcam hand-tracking mouse control via MediaPipe
+- [cv-playground](https://github.com/AlirezaRg/cv-playground): real-time face detection/recognition with InsightFace and ArcFace
+- [pdf-insurance-to-excel](https://github.com/AlirezaRg/pdf-insurance-to-excel): converts Iranian insurance PDF reports to Excel, with OCR
 
-## Notes
+## Optional
 
-This site (codeiish.ir) is a single-page portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. Source: https://github.com/AlirezaRg/codeiish-3d
+- [codeiish-3d](https://github.com/AlirezaRg/codeiish-3d): source code for this portfolio site (React, TypeScript, Tailwind CSS, Framer Motion, three.js)

@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html, Sparkles, Stars, MeshDistortMaterial } from '@react-three/drei';
-import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import * as THREE from 'three';
 import './ProjectsOrbit3D.css';
 
@@ -81,7 +81,7 @@ function CenterHub() {
   return (
     <group>
       <mesh ref={meshRef}>
-        <sphereGeometry args={[1.35, 96, 96]} />
+        <sphereGeometry args={[1.35, 32, 32]} />
         <MeshDistortMaterial
           ref={matRef}
           color="#8b5cf6"
@@ -93,8 +93,8 @@ function CenterHub() {
           speed={2.2}
         />
       </mesh>
-      <Sparkles count={70} scale={3} size={3} speed={0.4} color="#7dd3ff" opacity={0.9} />
-      <Sparkles count={50} scale={3.6} size={2.2} speed={0.25} color="#ff6ec7" opacity={0.7} />
+      <Sparkles count={28} scale={3} size={3} speed={0.4} color="#7dd3ff" opacity={0.9} />
+      <Sparkles count={20} scale={3.6} size={2.2} speed={0.25} color="#ff6ec7" opacity={0.7} />
       <pointLight ref={lightRef} color="#8b5cf6" intensity={22} distance={10} decay={2} />
       <Html center distanceFactor={9} style={{ pointerEvents: 'none' }}>
         <div className="po3-center-label">AlirezaRg</div>
@@ -176,7 +176,7 @@ function Scene() {
   return (
     <>
       <ambientLight intensity={0.3} />
-      <Stars radius={35} depth={25} count={1400} factor={2.2} saturation={0.4} fade speed={0.5} />
+      <Stars radius={35} depth={25} count={350} factor={2.2} saturation={0.4} fade speed={0.5} />
       <group ref={groupRef}>
         <CenterHub />
         {REPOS.map((repo, i) => (
@@ -196,9 +196,8 @@ function Scene() {
         autoRotate
         autoRotateSpeed={0.5}
       />
-      <EffectComposer>
-        <Bloom intensity={1.5} luminanceThreshold={0.1} luminanceSmoothing={0.85} mipmapBlur />
-        <ChromaticAberration offset={[0.0009, 0.0009]} />
+      <EffectComposer multisampling={0} resolutionScale={0.6}>
+        <Bloom intensity={1.4} luminanceThreshold={0.15} luminanceSmoothing={0.85} mipmapBlur={false} />
       </EffectComposer>
     </>
   );
@@ -207,7 +206,11 @@ function Scene() {
 export default function ProjectsOrbit3D() {
   return (
     <div className="po3-canvas-wrap">
-      <Canvas camera={{ position: [0, 1.5, 9.5], fov: 50 }} gl={{ antialias: true, alpha: true }}>
+      <Canvas
+        camera={{ position: [0, 1.5, 9.5], fov: 50 }}
+        gl={{ antialias: false, alpha: true, powerPreference: 'low-power' }}
+        dpr={[1, 1.5]}
+      >
         <Scene />
       </Canvas>
     </div>
